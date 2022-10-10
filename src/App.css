@@ -1,38 +1,100 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 17px;
+  line-height: 1.5;
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+}
+
+.calculator {
+  background-color: #161623;
+  line-height: 1.6;
+  color: #eee;
+  padding: 1.5rem 1rem;
+}
+
+.calculator h1 {
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 2em;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  margin: 3em auto 3em;
+  border-radius: 15px;
+  padding-inline: 10px;
+  background-color: #2a2a3d;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* INPUT DISPLAY */
+.display {
+  text-align: right;
+  padding: .5em;
+  font-size: 2.6rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.keypad {
+  width: 100%;
+  font-size: 2rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  text-align: center;
+  justify-content: space-around;
   align-items: center;
+  border-top: 2px solid #eee;
+  padding: 1rem 0;
+}
+
+button {
+  padding: 1rem 0;
+  width: 4rem;
+  cursor: pointer;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: transparent;
+  color: #eee;
+  font-size: 1.3em;
+  border-radius: 20px;
+  border: 1.5px solid #eee;
+  margin: 0.5em 0;
+  transition: all ease-in 0.2s;
+  animation: slideIn 1s 0.5s;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes slideIn {
   from {
-    transform: rotate(0deg);
+    transform: translateY(-25%);
   }
   to {
-    transform: rotate(360deg);
+    transform: translateY(0);
   }
+}
+
+.keypad .col > *:hover {
+  background-color: #161623;
+  border-color: #161623;
+}
+
+.clear-btn {
+  color: #ce4ace;
+}
+
+.equal {
+  background-color: #ce4ace;
+  border-color: #ce4ace;
+}
+
+
+.attribution a {
+  color: #c83cb9;
+  margin-left: 2px;
+  text-decoration: none;
 }

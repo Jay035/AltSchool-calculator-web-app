@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Display from "./components/Display";
+import Keypad from "./components/Keypad";
+import NumberProvider from "./components/NumberProvider";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NumberProvider>
+        <section className="calculator">
+          <h1>Calculator</h1>
+          <div className="container">
+            <Display />
+            {/* keypad */}
+            <Keypad />
+          </div>
+          <div className="attribution" style={{ textAlign: "center" }}>
+            Challenge by
+            <a href="https://twitter.com/AltSchoolAfrica"> AltSchool</a>. Coded
+            by
+            <a href="https://twitter.com/Chibuike035"> CodexJay</a>.
+          </div>
+        </section>
+      </NumberProvider>
     </div>
   );
 }
