@@ -8,14 +8,14 @@ export default function Keypad() {
   return (
     <div className="keypad">
       <div className="col">
-        <ClearButton />
+        <BackspaceButton />
         <Button label={7} className="number" />
         <Button label={4} className="number" />
         <Button label={1} className="number" />
         <NegativeButton />
       </div>
       <div className="col">
-        <BackspaceButton />
+        <ClearButton />
         <Button label={8} className="number" />
         <Button label={5} className="number" />
         <Button label={2} className="number" />
