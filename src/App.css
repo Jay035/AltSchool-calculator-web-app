@@ -55,10 +55,12 @@ body {
 
 button {
   padding: 1rem 0;
+  height: 5.2rem;
   width: 4rem;
   cursor: pointer;
   display: flex;
   justify-content: center;
+  align-items: center;
   background: transparent;
   color: #eee;
   font-size: 1.3em;
