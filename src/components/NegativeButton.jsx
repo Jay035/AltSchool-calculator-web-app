@@ -1,11 +1,14 @@
-import { useContext } from "react";
-import { NumberContext } from "./NumberProvider";
+import { ACTIONS } from "../App";
 
-export default function NegativeButton() {
-  const { handleToggleNegative } = useContext(NumberContext);
-
+export default function NegativeButton({dispatch}) {
   return (
-    <button type="button" className="Button" onClick={handleToggleNegative}>
+    <button 
+      type="button" 
+      className="Button" 
+      onClick={() => {
+        dispatch({ type: ACTIONS.NEGATE})
+      }}
+      >
       +/-
     </button>
   );

@@ -1,39 +1,40 @@
 import BackspaceButton from "./BackspaceButton";
 import ClearButton from "./ClearButton";
 import EqualButton from "./EqualButton";
+import DigitButton from "./DigitButton";
+import OperationButton from "./OperationButton";
 import NegativeButton from "./NegativeButton";
-import Button from "./Button";
 
-export default function Keypad() {
+export default function Keypad({dispatch}) {
   return (
     <div className="keypad">
       <div className="col">
-        <BackspaceButton />
-        <Button label={7} className="number" />
-        <Button label={4} className="number" />
-        <Button label={1} className="number" />
-        <NegativeButton />
+        <BackspaceButton dispatch={dispatch} />
+        <DigitButton digit="7" dispatch={dispatch} />
+        <DigitButton digit="4" dispatch={dispatch} />
+        <DigitButton digit="1" dispatch={dispatch} />
+        <NegativeButton dispatch={dispatch} />
       </div>
       <div className="col">
-        <ClearButton />
-        <Button label={8} className="number" />
-        <Button label={5} className="number" />
-        <Button label={2} className="number" />
-        <Button label={0} className="number" />
+        <ClearButton dispatch={dispatch} />
+        <DigitButton digit="8" dispatch={dispatch} />
+        <DigitButton digit="5" dispatch={dispatch} />
+        <DigitButton digit="2" dispatch={dispatch} />
+        <DigitButton digit="0" dispatch={dispatch} />
       </div>
       <div className="col">
-        <Button label=" % " className="operation" />
-        <Button label={9} className="number" />
-        <Button label={6} className="number" />
-        <Button label={3} className="number" />
-        <Button label="." className="number" />
+        <OperationButton operation="%" dispatch={dispatch} />
+        <DigitButton digit="9" dispatch={dispatch} />
+        <DigitButton digit="6" dispatch={dispatch} />
+        <DigitButton digit="3" dispatch={dispatch} />
+        <DigitButton digit="." dispatch={dispatch} />
       </div>
       <div className="col">
-        <Button label=" / " className="operation" />
-        <Button label=" * " className="operation" />
-        <Button label=" - " className="operation" />
-        <Button label=" + " className="operation" />
-        <EqualButton />
+        <OperationButton operation="/" dispatch={dispatch} />
+        <OperationButton operation="*" dispatch={dispatch} />
+        <OperationButton operation="-" dispatch={dispatch} />
+        <OperationButton operation="+" dispatch={dispatch} />
+        <EqualButton dispatch={dispatch} />
       </div>
     </div>
   );

@@ -1,12 +1,9 @@
-import { useContext } from "react";
-import { NumberContext } from "./NumberProvider";
-
-export default function Display() {
-  const { result } = useContext(NumberContext);
+export default function Display({currentOperand, previousOperand, operation, formatOperand}) {
 
   return (
     <div className="display">
-      {!result.length ? '0' : result }
+      <div className="previous-operand">{formatOperand(previousOperand)} {operation}</div>
+      <div className="current-operand">{formatOperand(currentOperand)}</div>
     </div>
   );
 }

@@ -1,11 +1,14 @@
-import { useContext } from "react";
-import { NumberContext } from "./NumberProvider";
+import { ACTIONS } from "../App";
 
-export default function EqualButton() {
-  const { handleCalcFunction } = useContext(NumberContext);
-
+export default function EqualButton({ dispatch }) {
   return (
-    <button type="button" className="Button equal" onClick={handleCalcFunction}>
+    <button
+      type="button"
+      className="Button equal"
+      onClick={() => {
+        dispatch({ type: ACTIONS.EVALUATE });
+      }}
+    >
       =
     </button>
   );

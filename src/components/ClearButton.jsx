@@ -1,11 +1,14 @@
-import { useContext } from "react";
-import { NumberContext } from "./NumberProvider";
+import { ACTIONS } from "../App";
 
-export default function ClearButton() {
-  const { handleClearValue } = useContext(NumberContext);
-
+export default function ClearButton({ dispatch }) {
   return (
-    <button type="button" className="Button clear-btn" onClick={ handleClearValue}>
+    <button
+      type="button"
+      className="Button clear-btn"
+      onClick={() => {
+        dispatch({ type: ACTIONS.CLEAR });
+      }}
+    >
       C
     </button>
   );

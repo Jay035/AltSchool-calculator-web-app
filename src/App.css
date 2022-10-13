@@ -37,11 +37,24 @@ body {
 /* INPUT DISPLAY */
 .display {
   text-align: right;
-  padding: .5em;
-  font-size: 2.6rem;
+  padding: .8rem .5rem;
+  font-size: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  line-height: 1;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.previous-operand{
+  font-size: 1.5rem;
+  color: #fff;
+  opacity: .9;
 }
 
 .keypad {
+  margin-top: 1em;
   width: 100%;
   font-size: 2rem;
   display: flex;
@@ -50,7 +63,7 @@ body {
   justify-content: space-around;
   align-items: center;
   border-top: 2px solid #eee;
-  padding: 1rem 0;
+  padding: 0 0 1rem 0;
 }
 
 button {
@@ -71,6 +84,7 @@ button {
   animation: slideIn 1s 0.5s;
 }
 
+/* slide in animation */
 @keyframes slideIn {
   from {
     transform: translateY(-25%);
@@ -80,20 +94,21 @@ button {
   }
 }
 
-.keypad .col > *:hover {
+button:hover {
   background-color: #161623;
   border-color: #161623;
 }
 
+/* clear button */
 .clear-btn {
   color: #ce4ace;
 }
 
+/* equal button */
 .equal {
   background-color: #ce4ace;
   border-color: #ce4ace;
 }
-
 
 .attribution a {
   color: #c83cb9;
