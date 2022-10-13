@@ -29,13 +29,13 @@ function reducer(state, { type, payload }) {
       }
 
       
-      if ((payload.digit === "." && state.operation !== null && state.previousOperand !== null) || (payload.digit === "." && state.operation !== null && state.previousOperand !== null)) {
+      if (payload.digit === "." && state.operation !== null && state.previousOperand !== null && state.currentOperand == null) {
         return {
           ...state,
           currentOperand: `0${payload.digit}`
         }
       }
-
+      
       if (payload.digit === "." && state.currentOperand.includes(".")) {
         return state;
       }
